@@ -1,0 +1,59 @@
+<div class="flex items-center justify-center h-screen bg-gray-100">
+  <form
+    class="bg-white p-6 rounded-lg shadow-md w-96"
+    [formGroup]="registerForm"
+    (ngSubmit)="onSubmit()"
+  >
+    <h2 class="text-2xl font-semibold mb-4 text-center">Registro</h2>
+    
+    <div class="mb-4">
+      <label for="userName" class="block text-sm font-medium text-gray-700">Nombre de usuario:</label>
+      <input
+        id="userName"
+        formControlName="userName"
+        type="text"
+        required
+        class="mt-1 block w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+      />
+      <div *ngIf="registerForm.get('userName')?.invalid && registerForm.get('userName')?.touched" class="text-red-500 text-sm mt-1">
+        El nombre de usuario es requerido.
+      </div>
+    </div>
+
+    <div class="mb-4">
+      <label for="password" class="block text-sm font-medium text-gray-700">Contraseña:</label>
+      <input
+        id="password"
+        formControlName="password"
+        type="password"
+        required
+        class="mt-1 block w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+      />
+      <div *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched" class="text-red-500 text-sm mt-1">
+        La contraseña debe tener al menos 8 caracteres, incluyendo mayúsculas, minúsculas, un número y un carácter especial.
+      </div>
+    </div>
+
+    <div class="mb-4">
+      <label for="confirmPassword" class="block text-sm font-medium text-gray-700">Confirmar contraseña:</label>
+      <input
+        id="confirmPassword"
+        formControlName="confirmPassword"
+        type="password"
+        required
+        class="mt-1 block w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+      />
+      <div *ngIf="registerForm.get('confirmPassword')?.invalid && registerForm.get('confirmPassword')?.touched" class="text-red-500 text-sm mt-1">
+        Las contraseñas no coinciden.
+      </div>
+      <div *ngIf="errorMessage" class="text-red-500 text-sm mt-1">{{ errorMessage }}</div>
+    </div>
+
+    <button
+      type="submit"
+      class="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-500 transition duration-200"
+    >
+      Registrarse
+    </button>
+  </form>
+</div>

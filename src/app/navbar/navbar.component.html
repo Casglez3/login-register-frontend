@@ -1,0 +1,41 @@
+<nav class="bg-white shadow-lg">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-center h-16">
+      <div class="flex mt-3">
+
+        <div class="hidden sm:-my-px sm:ml-6 sm:flex sm:space-x-8">
+          <a *ngIf="isAuth" href="/" name="updateUserData"
+            class="text-gray-500 hover:text-gray-700 px-3 py-2 rounded-md text-sm font-medium">Actualizar datos</a>
+          <a *ngIf="!isAuth" href="/registration"
+            class="text-gray-500 hover:text-gray-700 px-3 py-2 rounded-md text-sm font-medium">Registro</a>
+          <a *ngIf="!isAuth" href="/login"
+            class="text-gray-500 hover:text-gray-700 px-3 py-2 rounded-md text-sm font-medium">Iniciar sesión</a>
+          <a *ngIf="isAuth" (click)="logout()"
+            class="text-red-600 hover:text-red-700 px-3 py-2 rounded-md text-sm font-medium cursor-pointer">Cerrar
+            sesión</a>
+        </div>
+      </div>
+
+      <div class="flex sm:hidden items-center">
+        <button type="button" class="text-gray-500 hover:text-gray-700 focus:outline-none" aria-label="Toggle menu">
+          <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="sm:hidden">
+    <div class="space-y-1 pt-2 pb-3">
+      <a href="/" class="block pl-3 pr-4 py-2 text-base font-medium text-gray-500 hover:text-gray-700">Home</a>
+      <a href="/registration"
+        class="block pl-3 pr-4 py-2 text-base font-medium text-gray-500 hover:text-gray-700">Registro</a>
+      <a href="/login" class="block pl-3 pr-4 py-2 text-base font-medium text-gray-500 hover:text-gray-700">Iniciar
+        sesión</a>
+      <a *ngIf="isAuth" (click)="logout()" name="logout"
+        class="block pl-3 pr-4 py-2 text-base font-medium text-red-600 hover:text-red-700 cursor-pointer">Cerrar
+        sesión</a>
+    </div>
+  </div>
+</nav>
