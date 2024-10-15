@@ -1,5 +1,7 @@
 describe('e2eTesting', () => {
 
+  //Funciones auxiliares para el login, logout, registro y eliminación de usuario
+
   const login = (userName:string, password:string) => {
     cy.visit('/login')
     cy.get('input[id="userName"]').type(userName)
@@ -8,7 +10,7 @@ describe('e2eTesting', () => {
   }
 
   const logout = () => {
-    //Nos aseguramos de que el botón de logout esté visible
+    //Nos aseguramos de que el botón de logout esté visible y hacemos click 
     cy.get('div.sm\\:hidden').invoke('show');
     cy.get('a[name="logout"]').should("be.visible").click();
     cy.contains('Inicio de sesión');
@@ -28,6 +30,8 @@ describe('e2eTesting', () => {
     cy.get('h2[name="deleteUser"]').click();
   }
 
+
+  //Pruebas de Cypress para el login, logout, registro y eliminación de usuario 
 
   it('Visits the initial project page', () => {
     cy.visit('/')
@@ -62,8 +66,8 @@ describe('e2eTesting', () => {
     cy.contains('¡Login exitoso, aquí puedes modificar los datos de usuario!');
     cy.wait(1000); //Esperamos a que se cargue la información
     cy.get('input[id="userName"]').clear().type('TestUserNameUpdated123');
-    cy.get('input[id="newPassword"]').clear().type('HolaMundo1$2'); //Contraseña nueva
-    cy.get('input[id="confirmNewPassword"]').type('HolaMundo1$2');
+    cy.get('input[id="newPassword"]').clear().type('HolaMundo1$2');
+    cy.get('input[id="confirmNewPassword"]').type('HolaMundo1$2'); 
     cy.get('button[type="submit"]').click();
     cy.get('input[id="userName"]').should('have.attr', 'placeholder', 'TestUserNameUpdated123');
     logout();
