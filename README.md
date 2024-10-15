@@ -93,11 +93,13 @@ Esto lanzará la aplicación en http://localhost:4200/
 
 ## Rutas disponibles:
 -**Autenticación**
+
 Registro de usuario: Permite a los nuevos usuarios registrarse.
 
 Inicio de sesión: Permite a los usuarios existentes iniciar sesión en su cuenta.
 
 -**Gestión de usuario**
+
 Actualizar usuario: Los usuarios pueden actualizar su nombre de usuario y contraseña.
 
 Eliminar usuario: Los usuarios pueden eliminar su cuenta.
