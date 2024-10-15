@@ -133,9 +133,9 @@ Las pruebas incluyen:
 **app:** Aquí se encuentra la lógica principal de la aplicación. Al tener los componentes organizados en subcarpetas (como auth y user), se permite una clara agrupación de funcionalidades relacionadas.
 La decisión de utilizar componentes standalone mejora la modularidad y la reutilización, permitiendo que cada componente se cargue de manera independiente y reduzca la complejidad del manejo de módulos.
 
-**<u>Carpeta app/:</u>** Alberga la lógica de la aplicación, dividiéndola en diferentes módulos o funcionalidades.
+**-Carpeta app/:** Alberga la lógica de la aplicación, dividiéndola en diferentes módulos o funcionalidades.
 
-**<u>Carpeta app/auth/</u>:** Centraliza todo lo relacionado con la autenticación, lo que permite un acceso rápido y organizado a las funcionalidades de login y registro.
+**-Carpeta app/auth/:** Centraliza todo lo relacionado con la autenticación, lo que permite un acceso rápido y organizado a las funcionalidades de login y registro.
 
 **app/auth/components/:**
 
@@ -149,18 +149,18 @@ Implementar un service para manejar las solicitudes HTTP y el estado de la auten
 El uso de BehaviorSubject para el estado de autenticación permite a los componentes reaccionar a cambios en el estado de la autenticación de manera eficiente.
 
 
-**<u>Carpeta guards/:</u>**
+**-Carpeta guards/:**
 auth.guard.ts: Implementa la lógica de protección de rutas, verificando si el usuario está autenticado antes de permitir el acceso a ciertas páginas.
 Uso de guardas para manejar la lógica de seguridad en las rutas, mejorando la seguridad y la experiencia del usuario.
 Verificación de autenticación centralizada, que permite una gestión más clara de los accesos.
 
 
-**<u>Carpeta navbar/:</u>**
+**-Carpeta navbar/:**
 navbar.component.ts: Maneja la lógica de presentación y el estado de autenticación para mostrar diferentes enlaces en la barra de navegación.
 Uso de suscripciones al AuthService para actualizar la interfaz en tiempo real según el estado de autenticación del usuario.
 
 
-**<u>Carpeta user/:</u>**
+**-Carpeta user/:**
 
 **user/components/:**
 
@@ -173,7 +173,7 @@ Se implementó el componente UserHomeComponent utilizando formularios reactivos,
 El UserService encapsula la lógica de actualización y eliminación de datos del usuario, promoviendo una clara separación de responsabilidades. Utiliza HttpClient para realizar solicitudes HTTP seguras y maneja errores de forma que informa al usuario sobre el estado de las operaciones, lo que mejora la robustez de la aplicación.
 
 
-**<u>Carpeta cypress:</u>**
+**-Carpeta cypress:**
 
 
 **spec.cy.ts:** Este archivo implementa pruebas de extremo a extremo (E2E) utilizando Cypress para validar el comportamiento de la aplicación. Las pruebas están organizadas en funciones reutilizables como login, logout, register, y deleteUser, que encapsulan la lógica de interacción con la interfaz de usuario.
