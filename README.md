@@ -87,7 +87,7 @@ Asegúrate de tener un archivo de configuración de TypeScript (tsconfig.json) e
 ## Ejecución de la aplicación:
 Para iniciar la aplicación, utiliza el siguiente comando:
 
-`npm start`
+`ng serve -o`
 
 Esto lanzará la aplicación en http://localhost:4200/
 
@@ -128,8 +128,18 @@ Las pruebas incluyen:
 
 -**Actualización de usuario:** Prueba la actualización de datos del usuario.
 
+## Despliegue:
+
+Se ha desplegado la aplicación, tanto el backend con Render como el frontend con Vercel, por lo que puedes probar:
+
+**-API en producción:** https://login-register-backend-ir31.onrender.com (puede probarse con POSTMAN)
+
+**-Aplicación completa desplegada:** https://login-register-frontend-one.vercel.app/ 
+
+(Se está utilizando la capa gratuita de Render, por lo que a veces puede que el rendimiento no sea el esperado).
 
 ## En cuanto a la organización general de la aplicación y las decisiones tomadas podemos destacar:
+
 **app:** Aquí se encuentra la lógica principal de la aplicación. Al tener los componentes organizados en subcarpetas (como auth y user), se permite una clara agrupación de funcionalidades relacionadas.
 La decisión de utilizar componentes standalone mejora la modularidad y la reutilización, permitiendo que cada componente se cargue de manera independiente y reduzca la complejidad del manejo de módulos.
 
@@ -177,3 +187,7 @@ El UserService encapsula la lógica de actualización y eliminación de datos de
 
 
 **spec.cy.ts:** Este archivo implementa pruebas de extremo a extremo (E2E) utilizando Cypress para validar el comportamiento de la aplicación. Las pruebas están organizadas en funciones reutilizables como login, logout, register, y deleteUser, que encapsulan la lógica de interacción con la interfaz de usuario.
+
+**-Carpeta environment:**
+Esta carpeta contiene los archivos environment.development.ts, environment.staging.ts y environment.ts, donde se definen las variables de entorno para apuntar a los diferentes entornos de la aplicación. En este caso, al tratarse de una app sencilla de ejemplo, únicamente se recoge los posibles valores de la API. Las modificaciones en las variables de entorno se aplican automáticamente mediante las directivas definidas en el archivo angular.json, ajustándose según el entorno de ejecución. Para la versión que se ha desplegado, se está usando el entorno de stanging.
+

@@ -10,7 +10,7 @@ import { environment } from "../../../environments/environment";
 })
 export class AuthService {
   
-  private apiUrl =  environment.apiUrl; // URL de la API
+  private apiUrl =  environment.apiUrl; // URL de la API 
   private _isLoggedInSubject = new BehaviorSubject<boolean>(false); // Cambiamos a BehaviorSubject para poder emitir el estado actual
   private _userId: string | null = null; // Propiedad para almacenar el id del usuario
   private _userName: string | null = null; // Propiedad para almacenar el nombre del usuario
