@@ -30,7 +30,6 @@ describe('e2eTesting', () => {
     cy.get('h2[name="deleteUser"]').click();
   }
 
-
   //Pruebas de Cypress para el login, logout, registro y eliminación de usuario 
 
   it('Visits the initial project page', () => {
@@ -64,7 +63,7 @@ describe('e2eTesting', () => {
     register('TestUserName123', 'HolaMundo1$', 'HolaMundo1$');
     login('TestUserName123', 'HolaMundo1$');
     cy.contains('¡Login exitoso, aquí puedes modificar los datos de usuario!');
-    cy.wait(1000); //Esperamos a que se cargue la información
+    cy.wait(1000); //Esperamos 1 segundo a que se cargue la información
     cy.get('input[id="userName"]').clear().type('TestUserNameUpdated123');
     cy.get('input[id="newPassword"]').clear().type('HolaMundo1$2');
     cy.get('input[id="confirmNewPassword"]').type('HolaMundo1$2'); 

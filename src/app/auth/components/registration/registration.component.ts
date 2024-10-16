@@ -7,7 +7,6 @@ import { CommonModule } from "@angular/common";
 import { Router } from "@angular/router";
 
 
-
 @Component({
   selector: "app-registration",
   standalone: true,
@@ -49,7 +48,7 @@ export class RegistrationComponent {
       this.authService.register(formData).pipe(
         tap((response) => {
           console.log(response);
-          // Reddirige al usuario a la página de inicio de usuario si la petición es exitosa
+          // Redirige al usuario a la página de inicio de usuario si la petición es exitosa
           this.router.navigate(["/login"]);  
         }),
         catchError((error) => {

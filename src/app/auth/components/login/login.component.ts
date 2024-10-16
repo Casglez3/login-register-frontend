@@ -48,7 +48,7 @@ export class LoginComponent {
                   this.errorMessage = "Usuario o contraseña incorrectos";
                   return of(null);
                 })
-                // Suscribirse al observable para realizar la petición HTTP
+                // Nos suscribimos al observable para realizar la petición HTTP
             ).subscribe();
           }else{
             this.errorMessage = "Por favor, completa todos los campos";
