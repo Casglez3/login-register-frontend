@@ -2,6 +2,7 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Observable, BehaviorSubject } from "rxjs";
 import { Router } from "@angular/router";
+import { environment } from "../../../environments/environment";
 
 
 @Injectable({
@@ -9,7 +10,7 @@ import { Router } from "@angular/router";
 })
 export class AuthService {
   
-  private apiUrl = "http://localhost:3000"; // URL de tu API
+  private apiUrl =  environment.apiUrl; // URL de la API
   private _isLoggedInSubject = new BehaviorSubject<boolean>(false); // Cambiamos a BehaviorSubject para poder emitir el estado actual
   private _userId: string | null = null; // Propiedad para almacenar el id del usuario
   private _userName: string | null = null; // Propiedad para almacenar el nombre del usuario
